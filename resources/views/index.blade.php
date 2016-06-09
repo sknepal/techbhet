@@ -21,7 +21,6 @@
           </div>
         </div>
 
-
     </div>
     @if($events)
         {!! $events->appends(Request::except('page'))->links() !!}

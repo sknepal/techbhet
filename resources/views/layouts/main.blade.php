@@ -9,12 +9,16 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>TechBhet - @yield('title')</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="{{ URL::asset('/js/bootbox.min.js') }}"></script>
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet">
+ {!!   Feed::link(url('feeds'), 'atom', 'Site Feed', 'en') !!}
+
+
 </head>
 
 <body>
@@ -77,6 +81,31 @@
                     <a href="/categories/{{$category->id}}" class="list-group-item">{{$category->name}}</a>
                 @endforeach
             </div>
+            <input class="btn btn-primary" type="submit" value="Subscribe" id="subscribe">
+            <script>
+            $('#subscribe').on('click', function (e) {
+                bootbox.dialog({
+                    title: "Subscribe",
+                    message: '<select id="category"> <option value="TheLacunaBlog">Meetups</option> <option value="hackathons">Hackathons</option> <option value="Workshops">Workshops</option></select> ' +
+                    '<p><input id="email" type="text" class="txt1" size="30" value="Enter email address" onfocus="this.value = null;" name="email"/>',
+                    buttons: {
+                        success: {
+                            label: "Subscribe",
+                            className: "btn-success",
+                            callback: function () {
+                                var name = $('#category').val();
+                                var email = $('#email').val();
+//                                console.log(name);
+//                                console.log(email);
+                                window.open("http://feedburner.google.com/fb/a/mailverify?uri=" + name + "&email=" + email);
+                                return false;
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+
         @show
 
 
@@ -100,8 +129,7 @@
 
 </div><!-- /.container -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 
 </body>
 </html>

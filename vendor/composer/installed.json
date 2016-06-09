@@ -3154,5 +3154,58 @@
         ],
         "description": "HTML and Form Builders for the Laravel Framework",
         "homepage": "http://laravelcollective.com"
+    },
+    {
+        "name": "roumen/feed",
+        "version": "v2.10.3",
+        "version_normalized": "2.10.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/RoumenDamianoff/laravel-feed.git",
+            "reference": "d2f51d9f0d8c699cb812c5b7edeb4804e253f691"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/d2f51d9f0d8c699cb812c5b7edeb4804e253f691",
+            "reference": "d2f51d9f0d8c699cb812c5b7edeb4804e253f691",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "^5.0",
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "orchestra/testbench": "^3.0",
+            "phpunit/phpunit": "^4.8"
+        },
+        "time": "2016-06-01 18:54:03",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Roumen\\Feed": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Roumen Damianoff",
+                "email": "roumen@dawebs.com",
+                "homepage": "https://roumen.it",
+                "role": "Developer"
+            }
+        ],
+        "description": "A simple feed generator for Laravel.",
+        "homepage": "https://roumen.it/projects/laravel-feed",
+        "keywords": [
+            "atom",
+            "feed",
+            "generator",
+            "laravel",
+            "rss"
+        ]
     }
 ]

@@ -25,7 +25,7 @@ class EventsController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
-        $this->middleware('auth', ['except' => ['index', 'show', 'search']]);
+        $this->middleware('auth', ['except' => ['index', 'show', 'search', 'feed']]);
 //        $this->middleware('edit',['only'=>'edit']);
     }
     /**
@@ -37,6 +37,7 @@ class EventsController extends Controller
     {
 
         $events = Event::paginate(2);
+
 
         return view('index',  compact('events'));
     }
@@ -248,3 +249,4 @@ class EventsController extends Controller
 
     }
 }
+
